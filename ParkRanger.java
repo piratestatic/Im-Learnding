@@ -2,7 +2,6 @@ import java.util.*;
 import java.lang.*;
 
 
-
 class ParkRanger {
 
     static String[][] stateCards = { { "Alabama", "Yellowhammer", "Camelia", "false" },
@@ -62,10 +61,9 @@ class ParkRanger {
           break;
         }
       }
-
     }
 
-    System.out.printf("**** Thank you *****\n");
+    System.out.printf("**** Thank you! *****\n");
     System.out.printf("A summary report for each State, Bird, and Flower is:\n");
     for (String[] state : stateCards) {
       if (state[3] == "true") {
