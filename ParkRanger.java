@@ -43,33 +43,33 @@ class ParkRanger {
         { "Washington", "Willow Goldfinch", "Coast Rhododendrum", "false" },
         { "West Virginia", "Cardinal", "Rhododendron", "false" }, { "Wisconsin", "Robin", "Wood Violet", "false" },
         { "Wyoming", "Western Meadowlark", "Indian Paintbrush", "false" } };
-
+        //2D array of all 50 states, state bird and flower
   public static void main(String[] args) {
     String userInput;
     Scanner scannerIn = new Scanner(System.in);
     while (true) {
       System.out.printf("Enter a State or None to exit: ");
-      userInput = scannerIn.nextLine().trim();
-      if (userInput.equalsIgnoreCase("none")) {
+      userInput = scannerIn.nextLine().trim();//.trim() removes any leading or trailing spaces
+      if (userInput.equalsIgnoreCase("none")) {//this will ignore how it is typed
         break;
       }
 
-      for (String[] state : stateCards) {
-        if (userInput.equalsIgnoreCase(state[0])) {
+      for (String[] state : stateCards) {//as long as the user enters a value other than "none" they stay here.
+        if (userInput.equalsIgnoreCase(state[0])) {//if userInput equals the name of a state in column 0
           System.out.printf("State: %s\nBird: %s\nFlower: %s\n", state[0], state[1], state[2]);
-          state[3] = "true";
+          state[3] = "true";//then print that row and change column 3 to true
           break;
         }
-      }
-    }
+      }//end of for loop
+    }//end of while loop
 
     System.out.printf("**** Thank you! *****\n");
     System.out.printf("A summary report for each State, Bird, and Flower is:\n");
-    for (String[] state : stateCards) {
-      if (state[3] == "true") {
+    for (String[] state : stateCards) {//for every "stateCards"
+      if (state[3] == "true") {//that is true
         System.out.printf("%s, %s, %s\n", state[0], state[1], state[2]);
-      }
-    }
+      }//print them to the screen
+    }//end of for loop
 
-  }
-}
+  }//end of main method
+}//end of class
