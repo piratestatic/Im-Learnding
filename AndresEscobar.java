@@ -1,39 +1,33 @@
+package crimePackage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 public class CrimeFileReader {//AndresEscobar
   public static void main(String[] args) {
-      readAndRunCrime();
-  }
-  private static void readAndRunCrime() throws NumberFormatException {
-    Crime inventoryCrime = createCrime();
-    runCrime(inventoryCrime);
-  }
-  private static void readAndRunCrime() throws NumberFormatException {
-    Crime inventoryCrime = new Crime();
+
     try {
         String fileLocation = "\\Users\\corey\\OneDrive\\Desktop\\Crime.csv";//location of file
         File crimeFile = new File(fileLocation);
-        Scanner crimeScanner = new Scanner(crimeFile);// Will read from the file.
+
+		Scanner crimeScanner = new Scanner(crimeFile);// Will read from the file.
         String nextLine = crimeScanner.nextLine();//reads a line from the file
-        Double[] crimeValues =  nextLine.split(",");//not sure about this line
+
         System.out.println("Nextline: " + nextLine);//read a line from the file.
     } catch (FileNotFoundException ex) {
-        //bad things have happened if we are here
-        Logger.getLogger(CrimeFileReader.class.getName()).log(Level.SEVERE, null, ex);
+        //bad things have happened if we are here but I don't know what to do.
+
       }
-      return inventoryCrime;
+
     }
-  }
 
 
-    /*CrimeFileGetSet[] stats = new CrimeFileGetSet[20];
+    CrimeFileGetSet[] stats = new CrimeFileGetSet[20];
+
+    /*
     Scanner inputReader;
     // Variable declaration
     int count;
-    String line;
+    //String line;
     // Access Crime.csv and create array
     try{
       inputReader = new Scanner(new File(filename));
@@ -59,29 +53,76 @@ public class CrimeFileReader {//AndresEscobar
       inputReader.close();
     }
   }
-*/
+  */
+
 //BELOW HERE IS AN ATTEMPT TO GENERATE THE DATA FIELDS AND IT PROBABLY DOESN'T WORK
 
 
 
 
 
-// Method calculation for population growth rate
-  public void growth(CrimeFileGetSet[] data){//if 1 is selected
-    double growthRate;
-    System.out.println("Population growth rate: ");
-    for (int i = 0; i < data.length - 1; i++){
-      growthRate = 100 * (float) (data[i+1].getgrowth() - data[i].getgrowth()) / data[i].getgrowth();
-      System.out.println("From " + data[i].getYear() + " to " + data[i + 1].getYear() + " the population growth was "+ String.format("%.4f", growthRate) + "%");
-    }
-  }
-  // Method to find year with highest murder rate
-  public String maxMurderYear(CrimeFileGetSet[] data) {
-    int iSize = data.length;
-    double currentMurderRate;
-    double mMurderRate;
-    int murderHighYear;
-    String stReturnValue;
+
+
+   /*
+   	* if 1 is selected define growthRate
+   	* ((262803276 - 260327021)/260327021)*100 = 0.9512%,
+   	* for each value in population "math" the values until growth
+   	* ((crimeCSV[x][1] - crimeCSV[y][1])/crimeCSV[y][1])*100 = growthRate;
+   	* return growth rate to case 1
+   	*/
+
+   /*
+    * if 2 is selected define maxMurderYear
+    * compare murderRates until maxMurderRate is found
+    * compare crimeCSV[x][5] to crimeCSV[y][5] //I wish I could hard code this
+    * if crimeCSV[x][5] == crimeCSV[y][5]
+    * then compare crimeCSV[x][4] to crimeCSV[y][4]
+    * return maxMurderYear(year and rate) to case 2
+    */
+
+   /*
+    * if 3 is selected define minMurderYear
+    * compare murderRates until minMurderRate is found
+    * compare crimeCSV[x][5] to crimeCSV[y][5]
+    * if crimeCSV[x][5] == crimeCSV[y][5]
+    * then compare crimeCSV[x][4] to crimeCSV[y][4]
+    * return minMurderYear(year and rate) to case 3
+    */
+
+   /*
+    * if 4 is selected define maxRobberyYear
+    * compare murderRates until maxRobberyRate is found
+    * compare crimeCSV[x][9] to crimeCSV[y][9]
+    * if crimeCSV[x][9] == crimeCSV[y][9]//this condition can't happen with current data set
+    * then compare crimeCSV[x][8] to crimeCSV[y][8]
+    * return maxRobberyYear(year and rate) to case 4
+    */
+
+    /*
+     * if 5 is selected define minRobberyYear
+     * compare murderRates until minRobberyRate is found
+     * compare crimeCSV[x][9] to crimeCSV[y][9] until all values are
+     * if crimeCSV[x][9] == crimeCSV[y][9]
+     * then compare crimeCSV[x][8] to crimeCSV[y][8]
+     * return minRobberyYear(year and rate) to case 5
+     */
+
+    /*
+     * if Q is selected define quit
+     * return to case Q
+     */
+
+    /*
+     * if !1-5 || Q is selected define exceptions
+     * System.out.println("Do you have sausage fingers or can you just not read?");
+     * return to "main options"
+     */
+
+
+
+
+
+    /*
     // Access array
     try {
       for (int i = 0; i < iSize; i++) {
@@ -100,6 +141,7 @@ public class CrimeFileReader {//AndresEscobar
       return null;
     }
   }
+
   // Method to find lowest murder year
   public String minMurderYear(CrimeFileGetSet[] data) {
     int iSize = data.length;
@@ -176,3 +218,4 @@ public class CrimeFileReader {//AndresEscobar
     }
   }
 }
+*/
