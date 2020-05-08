@@ -1,14 +1,14 @@
 import java.util.*;
 import java.io.*;
-public class JefferyDahmer {
+public class USCrime {//TestUSCrime JefferyDahmer
   public static void main(String[] args) {
-    //Reference AndresEscobar
+    //Reference CrimeFileReader
     String crime = "Crime.csv";
     String userInput;//although this could be done with an array but 'Q'?
     File extFile = new File(crime);//saw this on YouTube
     Scanner scannerIn = new Scanner(System.in);
-    AndresEscobar crimeFile = new AndresEscobar();
-    NicoleSimpson[] data = AndresEscobar.read("Crime.csv");
+    CrimeFileReader crimeFile = new CrimeFileReader();
+    CrimeFileGetSet[] data = CrimeFileReader.read("Crime.csv");
     //Declare variables
     long startTime = System.currentTimeMillis();
     long endTime;//TODO: come up with a better way to get total time on here
@@ -23,10 +23,10 @@ public class JefferyDahmer {
       System.out.println("5. Prior to 2014 when where you least likely to be robbed?");
       System.out.println("Q. And you said your not a quitter!");
       System.out.println("\nHurry up %s people are dying, so make a selection: ");
-      userInput = scannerIn.nextLine().trim();//.trim() removes any leading or trailing spaces
+      userInput = scannerIn.nextLine().trim();//removes any leading or trailing spaces
       switch (userSelect){//is there a better way to do this?
         case "1":
-        crimeFile.populationGrowth(data);
+        crimeFile.growth(data);
         break;
         case "2":
         System.out.println("Nicole Simpson, Andres Escobar and Jeffery Dahmer murdered when the rate was highest in " + crimeFile.maxMurderYear(data));

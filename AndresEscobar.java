@@ -1,13 +1,38 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-public class AndresEscobar {
-  public static NicoleSimpson[] read(String filename){
-    // Array declaration
-    NicoleSimpson[] stats = new NicoleSimpson[20];
-    Scanner inputReader = null;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+public class CrimeFileReader {//AndresEscobar
+  public static void main(String[] args) {
+      readAndRunCrime();
+  }
+  private static void readAndRunCrime() throws NumberFormatException {
+    Crime inventoryCrime = createCrime();
+    runCrime(inventoryCrime);
+  }
+  private static void readAndRunCrime() throws NumberFormatException {
+    Crime inventoryCrime = new Crime();
+    try {
+        String fileLocation = "\\Users\\corey\\OneDrive\\Desktop\\Crime.csv";//location of file
+        File crimeFile = new File(fileLocation);
+        Scanner crimeScanner = new Scanner(crimeFile);// Will read from the file.
+        String nextLine = crimeScanner.nextLine();//reads a line from the file
+        Double[] crimeValues =  nextLine.split(",");//not sure about this line
+        System.out.println("Nextline: " + nextLine);//read a line from the file.
+    } catch (FileNotFoundException ex) {
+        //bad things have happened if we are here
+        Logger.getLogger(CrimeFileReader.class.getName()).log(Level.SEVERE, null, ex);
+      }
+      return inventoryCrime;
+    }
+  }
+
+
+    /*CrimeFileGetSet[] stats = new CrimeFileGetSet[20];
+    Scanner inputReader;
     // Variable declaration
-    int count = 0;
+    int count;
     String line;
     // Access Crime.csv and create array
     try{
@@ -17,8 +42,8 @@ public class AndresEscobar {
       while (inputReader.hasNext()) {
         line = inputReader.nextLine();
         String[] data = line.split(",");
-        stats[count] = new NicoleSimpson(Integer.parseInt(data[0]));
-        stats[count].setPopulationGrowth(Integer.parseInt(data[1]));
+        stats[count] = new CrimeFileGetSet(Integer.parseInt(data[0]));
+        stats[count].setgrowth(Integer.parseInt(data[1]));
         stats[count].setMaxMurderYear(Integer.parseInt(data[4]));
         stats[count].setMinMurderYear(Integer.parseInt(data[4]));
         stats[count].setMaxRobberyYear(Integer.parseInt(data[8]));
@@ -34,21 +59,28 @@ public class AndresEscobar {
       inputReader.close();
     }
   }
+*/
+//BELOW HERE IS AN ATTEMPT TO GENERATE THE DATA FIELDS AND IT PROBABLY DOESN'T WORK
+
+
+
+
+
 // Method calculation for population growth rate
-  public void populationGrowth(NicoleSimpson[] data){
+  public void growth(CrimeFileGetSet[] data){//if 1 is selected
     double growthRate;
     System.out.println("Population growth rate: ");
     for (int i = 0; i < data.length - 1; i++){
-      growthRate = 100 * (float) (data[i+1].getPopulationGrowth() - data[i].getPopulationGrowth()) / data[i].getPopulationGrowth();
+      growthRate = 100 * (float) (data[i+1].getgrowth() - data[i].getgrowth()) / data[i].getgrowth();
       System.out.println("From " + data[i].getYear() + " to " + data[i + 1].getYear() + " the population growth was "+ String.format("%.4f", growthRate) + "%");
     }
   }
   // Method to find year with highest murder rate
-  public String maxMurderYear(NicoleSimpson[] data) {
+  public String maxMurderYear(CrimeFileGetSet[] data) {
     int iSize = data.length;
-    double currentMurderRate = 0.00;
+    double currentMurderRate;
     double mMurderRate;
-    int murderHighYear = 0;
+    int murderHighYear;
     String stReturnValue;
     // Access array
     try {
@@ -69,11 +101,11 @@ public class AndresEscobar {
     }
   }
   // Method to find lowest murder year
-  public String minMurderYear(NicoleSimpson[] data) {
+  public String minMurderYear(CrimeFileGetSet[] data) {
     int iSize = data.length;
     double currentMurderRate = 0.00;
     double mMurderRate;
-    int murderLowYear = 0;
+    int murderLowYear;
     String stReturnValue;
     try {
       // Access array
@@ -94,11 +126,11 @@ public class AndresEscobar {
     }
   }
   // Get the year with highest robberies
-  public String maxRobberyYear(NicoleSimpson[] data) {
+  public String maxRobberyYear(CrimeFileGetSet[] data) {
     int iSize = data.length;
-    double currentRobberyRate = 0.00;
+    double currentRobberyRate;
     double dRobberyRate;
-    int robberyHighYear = 0;
+    int robberyHighYear;
     String stReturnValue;
     // Access array
     try {
@@ -119,11 +151,11 @@ public class AndresEscobar {
     }
   }
   //Method to find lowest robbery year
-  public String minRobberyYear(NicoleSimpson[] data) {
+  public String minRobberyYear(CrimeFileGetSet[] data) {
     int iSize = data.length;
-    double currentRobberyRate = 0.00;
+    double currentRobberyRate;
     double dRobberyRate;
-    int robberyLowYear = 0;
+    int robberyLowYear;
     String stReturnValue;
     // Access array
     try {

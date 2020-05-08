@@ -1,41 +1,58 @@
-public class NicoleSimpson {
+public class CrimeFileGetSet {//USCrimeClass NicoleSimpson
   // Crime data fields for each data to retrieve
-  private int year;
-  private double populationGrowth;
-  private int maxMurderYear;
-  private int minMurderYear;
-  private int maxRobberyYear;
-  private int minRobberyYear;
+  static final int YEAR;
+  static final int GROWTH;
+  static final int MAXMURDERYEAR;
+  static final int MINMURDERYEAR;
+  static final int MAXROBBERYYEAR;
+  static final int MINROBBERYYEAR;
   //Crime data constructor to set variables
-  public NicoleSimpson(int year, int populationGrowth, int maxMurderYear, int minMurderYear, int maxRobberyYear, int minRobberyYear){
-    this.year = year;
-    this.populationGrowth = populationGrowth;
-    this.maxMurderYear = maxMurderYear;
-    this.minMurderYear = minMurderYear;
-    this.maxRobberyYear = maxRobberyYear;
-    this.minRobberyYear = minRobberyYear;
+/*  public CrimeFileGetSet(int year, int growth, int maxMurderYear, int minMurderYear, int maxRobberyYear, int minRobberyYear) {
+    this.YEAR = year;//TODO: where does this code use this?
+    this.GROWTH = growth;
+    this.MAXMURDERYEAR = maxMurderYear;
+    this.MINMURDERYEAR = minMurderYear;
+    this.MAXROBBERYYEAR = maxRobberyYear;
+    this.MINROBBERYYEAR = minRobberyYear;
   }
-  // Constructor defaults
-  public NicoleSimpson(int i){
-    this.year = 0;
-    this.populationGrowth = 0.0;
-    this.maxMurderYear = 0;
-    this.minMurderYear = 0;
-    this.maxRobberyYear = 0;
-    this.minRobberyYear = 0;
-  }
+*/ //Do I even need this code?
   //Getter methods for each field
-  public int getYear() {return this.year; }
-  public double getPopulationGrowth() {return this.populationGrowth; }
-  public int getMaxMurderYear() {return this.maxMurderYear; }
-  public int getMinMurderYear() {return this.minMurderYear; }
-  public int getMaxRobberyYear() {return this.maxRobberyYear; }
-  public int getMinRobberyYear() {return this.minRobberyYear; }
+  public int getYear() {
+    return year;
+    }
+  public double getGrowth() {
+    return growth;
+  }
+  public int getMaxMurderYear() {
+    return maxMurderYear;
+  }
+  public int getMinMurderYear() {
+    return minMurderYear;
+  }
+  public int getMaxRobberyYear() {
+    return maxRobberyYear;
+  }
+  public int getMinRobberyYear() {
+    return minRobberyYear;
+  }
   // Setter method for each field
-  public void setYear(int year) {this.year = year;}
-  public void setPopulationGrowth(double populationGrowth) {this.populationGrowth = populationGrowth;}
-  public void setMaxMurderYear(int maxMurders) {this.maxMurderYear = maxMurders;}
-  public void setMinMurderYear(int minMurders) {this.minMurderYear = minMurders;}
-  public void setMaxRobberyYear(int maxRobbery) {this.maxRobberyYear = maxRobbery;}
-  public void setMinRobberyYear(int minRobbery) {this.minRobberyYear = minRobbery;}
+  }
+  public void setYear(int yr) {
+    this.year = yr;
+  }
+  public void setGrowth(double grow) {
+    this.growth = grow;
+  }
+  public void setMaxMurderYear(int maxMurk) {
+    this.maxMurderYear = maxMurk;
+  }
+  public void setMinMurderYear(int minMurk) {
+    this.minMurderYear = minMurk;
+  }
+  public void setMaxRobberyYear(int maxRob) {
+    this.maxRobberyYear = maxRob;
+  }
+  public void setMinRobberyYear(int minRob) {
+    this.minRobberyYear = minRob;
+  }
 }
