@@ -1,7 +1,7 @@
 /*
- * File: Car.java
+ * File: CarGarage.java
  * Author: Corey Hodges
- * Date: 3/26/21
+ * Date: 3/23/21
  * CMIS 242 7385 Intermediate Programming
  */
 
@@ -12,8 +12,8 @@ public class CarGarage {
   public static void main(String[] args) {
 
     Scanner scanCar = new Scanner(System.in);
-    Car defaultCar = new Car();
-    System.out.println(defaultCar.toString());
+    //Car defaultCar = new Car();
+    //System.out.println(defaultCar.toString());
 
     System.out.println("Lets upgrade your ride!");
 
