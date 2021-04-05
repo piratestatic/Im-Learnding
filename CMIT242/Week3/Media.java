@@ -11,7 +11,7 @@ public abstract class Media {
 
             this.id = id;
             this.title = title;
-            this.year= year;
+            this.year = year;
             }
 
             // get methods
@@ -32,12 +32,12 @@ public abstract class Media {
                   this.title = title;
             }
 
-            public void setYear(intyear) {
+            public void setYear(int year) {
                   this.year = year;
             }
 
             // calculate rental fee; for generic media it is flat fee $3.50
             public double calculateRentalFee() {
-                  return3.50;
+                  return 3.50;
             }
       }
