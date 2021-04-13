@@ -20,7 +20,7 @@ public class D4CoreyHJRadioButton extends JPanel {
         JPanel featurePanel =  mainDialogBox();
         label = new JLabel("Click the \"CLICK HERE\" button" + " to bring up the selected dialog.", JLabel.CENTER);
              
-        //Lay them out.
+        //Layout.
         Border padding = BorderFactory.createEmptyBorder(20,20,5,20);        
         featurePanel.setBorder(padding);
       
@@ -38,7 +38,6 @@ public class D4CoreyHJRadioButton extends JPanel {
     }
 
      //Used to create a pane containing a description, a single column of radio buttons, and the CLICK HERE button.
- 
     private JPanel createPane(String description, JRadioButton[] radioButtons, JButton showButton) {
                                                          
         int numChoices = radioButtons.length;
@@ -60,11 +59,11 @@ public class D4CoreyHJRadioButton extends JPanel {
 
     //Creates the panel shown . 
     private JPanel mainDialogBox() {
-        final int numButtons = 2;
+        int numButtons = 2;
         JRadioButton[] radioButtons = new JRadioButton[numButtons];
-        final ButtonGroup group = new ButtonGroup();
+        ButtonGroup group = new ButtonGroup();
 
-        JButton showItButton = null;
+        JButton showItButton = new JButton("CLICK HERE");
         
         final String bluePillOption = "bluePill";
         final String redPillOption = "redPill"; 
@@ -80,7 +79,7 @@ public class D4CoreyHJRadioButton extends JPanel {
         }
         radioButtons[0].setSelected(true);
 
-        showItButton = new JButton("CLICK HERE");
+        
         showItButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String command = group.getSelection().getActionCommand();
@@ -131,7 +130,7 @@ public class D4CoreyHJRadioButton extends JPanel {
                               showItButton);
         }
 
-     // Create the GUI and show it.
+     // Create and show the GUIt.
     private static void createAndShowGUI() {
         //Create and set up the window.
         JFrame frame = new JFrame("D4CoreyHJRadioButton");
