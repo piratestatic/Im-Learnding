@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
- //D4CoreyHJRadioButton.java requires these files: CustomDialog.java
     
 public class D4CoreyHJRadioButton extends JPanel {
     JLabel label;									
