@@ -1,11 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
-//Gift = Gift
-//orderGift = addGift
-//changeGift = removeGift
-//displayGift = displayGifts
 public class A2CoreyHMenu {
 		ArrayList<A2CoreyHGift> list; // attribute to store a list of Gift objects
 		
@@ -18,10 +13,9 @@ public class A2CoreyHMenu {
 		// method to display the menu
 		public void displayMenu() {
 			System.out.println("\n MENU");
-			System.out.println("1: Order a Gift Basket "); //Add book
-			System.out.println("2: Change Gift Basket ");  //Remove book
-		 // System.out.println("3: Find book ");                     		
-			System.out.println("5: Display Gift ");        //Display books
+			System.out.println("1: Order a Gift Basket "); 
+			System.out.println("2: Change Gift Basket ");                      		
+			System.out.println("5: Display Gift ");      
 			System.out.println("9: Exit program");		
 		}
 		
@@ -30,16 +24,11 @@ public class A2CoreyHMenu {
 			
 			switch (b) {
 
-			case 1 : //orderGift(); 		//addBook
-				System.out.println("What kind of gift basket do you want to order?");
-				System.out.println("1: Fruit Basket");
-				System.out.println("2: Sweets Basket");
-				
-			case 2 : changeGift(); 		//removeBook
+			case 1 : orderGift(); 		
 				break;
-		//	case 3 : findGift();												
-		//		break;
-			case 5 : displayGift(); 	//displayBooks
+			case 2 : changeGift(); 		
+				break;
+			case 5 : displayGift(); 	
 				break;
 			case 9: System.out.println("\nThank you for using the program. Goodbye!");
 				break;
@@ -59,24 +48,7 @@ public class A2CoreyHMenu {
 				}
 			}
 		}
-/*
-		private void findGift() {
-			Scanner stdin = new Scanner(System.in);
-			// prompt user for data to find the book
-			System.out.print("What is the ISBN of the book you are looking for? ");
-			int isbn = stdin.nextInt();
-			for (int i = 0; i < list.size(); i++) {
-				A2CoreyHGift b = list.get(i);
-				if (list.get(i).isbn == isbn) {
-					System.out.print(b.toString());
-					return;
-				}
-				
-			}
-			// if did not find the book
-			System.out.println("\nThere is no book with this ISBN");
-		}
-*/
+
 		private void changeGift() {
 
 			Scanner stdin = new Scanner(System.in);
@@ -101,12 +73,43 @@ public class A2CoreyHMenu {
 			System.out.println("\nThere is no book with this ISBN");
 		}
 		
-		private void orderGift(int n) {
+		private void orderGift() {
 				Scanner stdin = new Scanner(System.in);
-
 				// prompt user for all gift data to be set on creation
-				System.out.print("Would you like a Fruit Basket ");
-				int isbn = stdin.nextInt();
+				System.out.println("What kind of gift basket do you want to order?");
+				System.out.println("1: Fruit Basket");
+				System.out.println("2: Sweets Basket");
+				int typeBasket = stdin.nextInt();
+				if (typeBasket == 1) {
+					System.out.println("What size of gift basket do you want (S)mall, (M)edium, or (L)arge?:");
+				}
+				String size = stdin.next();
+				if (size == "S".toUpperCase()) {
+					price = 19.99;
+					numFruit = 6;
+				}
+				
+				if (size == "M".toUpperCase()) {
+					price = 29.99;
+					numFruit = 9;
+				}
+				
+				if (size == "L".toUpperCase()) {
+					price = 39.99;
+					numFruit = 15;
+				}
+				
+				System.out.println("Do you want citrus fruits included? true/false :");
+				boolean citrusFruit = stdin.next();
+				if (citrusFruit == "true".toLowerCase()) {
+					price += 5.99;
+				}
+				
+				if (typBasket == 2) {
+					System.out.println("What size of gift basket do you want (S)mall, (M)edium, or (L)arge?:");
+				}
+				
+				
 				for(int i = 0; i < list.size(); i++) {
 					if (list.get(i).isbn == isbn) {
 						System.out.print("This ISBN is already used! ");

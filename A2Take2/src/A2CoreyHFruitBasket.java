@@ -8,8 +8,18 @@ public class A2CoreyHFruitBasket extends A2CoreyHGift {
 	// constructor
 	public A2CoreyHFruitBasket(String basket, int numFruit, boolean citrusFruit, String size ) {
 		super(basket, size);
-		numFruits = fruits;
-		citrusFruit = citrus;		
+		if (this.size == small) {
+			numFruit = 6;
+		} else if (this.size == medium ) {
+			numFruit = 9;
+		} else {
+			numFruit = 15;
+		}
+		
+		
+		if (citrusfruit)
+			price += 5.99;
+		
 	}
 	
 	//get method
@@ -34,18 +44,34 @@ public class A2CoreyHFruitBasket extends A2CoreyHGift {
 	@Override
 	public double calculateGiftPrice() {
 				
-			//double price = numFruit * 0.10;  // basic fee
+			double smallPrice = 19.99; // basic fee
+			double mediumPrice = smallPrice += 10.00;
+			double largePrice = smallPrice += 20.00;
 			//int currYear = Calendar.getInstance().get(Calendar.YEAR);
 			
-			if(this.citrusFruit == True)
-				smallPrice += 5.99 ;  // add $1.00 fee
-			if(this.citrusFruit == True)
-				medPrice += 5.99 ;
-			if(this.citrusFruit == True)
-				lrgPrice += 5.99 ;
-			return price;
+			if(size == small && !citrusFruit) {
+				return smallPrice; //19.99;
+			} else if(size == small && citrusFruit) {
+				return smallPrice += 5.99 ;  // add 5.99 to 19.99
+			} else if(size == medium && !citrusFruit) {
+				return mediumPrice;  
+			} else if(size == medium && citrusFruit) {
+				return mediumPrice += 5.99;  // add 5.99 to 29.99
+			} else if(size == large && !citrusFruit) {
+				return largePrice;  
+			} else if(size == large && citrusFruit) {
+				return largePrice += 5.99;  // add 5.99 to 29.99
+			}
+			
+				return price
+			}
+			
+	@Override
+	public String toString() {
+		return "Fruit Basket [ basketID=" + getId() + ", title=" + getTitle() + ", year=" + getYear() + ", chapters=" 
+				+ numChapters+ "]";
 		}
-		
+	}
 	
 	
 }
@@ -66,10 +92,5 @@ public class A2CoreyHFruitBasket extends A2CoreyHGift {
 		return fee;
 	}
 	
-	@Override
-	public String toString() {
-		return "EBook [ id=" + getId() + ", title=" + getTitle() + ", year=" + getYear() + ", chapters=" 
-				+ numChapters+ "]";
-		}
-	}
+	
 */
