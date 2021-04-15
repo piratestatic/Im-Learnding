@@ -79,11 +79,23 @@ public class A2CoreyHMenu {
 				System.out.println("What kind of gift basket do you want to order?");
 				System.out.println("1: Fruit Basket");
 				System.out.println("2: Sweets Basket");
+				int i = stdin.nextInt();
+				switch (i) {
+
+			      case 1 : orderA2CoreyHFruit();         
+			        break;
+			      case 2 : orderA2CoreyHSweets();         
+			        break;
+			          default: System.out.println("Invalid choice");
+			    }
+			}
+				
+		private void orderA2CoreyHFruit() {
 				// create Gift instance
 				A2CoreyHGift b = new A2CoreyHGift();
 				System.out.println("Do you want citrus fruits included? true/false :");
 				boolean citrusFruit = (stdin.next().toLowerCase()=="true");
-				if (typeBasket == 2) {
+				if (typeBasket == 1) {
 					System.out.println("What size of gift basket do you want (S)mall, (M)edium, or (L)arge?:");
 				}
 				
