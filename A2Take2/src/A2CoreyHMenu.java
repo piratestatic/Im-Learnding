@@ -24,11 +24,11 @@ public class A2CoreyHMenu {
 			
 			switch (b) {
 
-			case 1 : orderGift(); 		
+			case 1 : orderA2CoreyHGift(); 		
 				break;
-			case 2 : changeGift(); 		
+			case 2 : changeA2CoreyHGift(); 		
 				break;
-			case 5 : displayGift(); 	
+			case 5 : displayA2CoreyHGift(); 	
 				break;
 			case 9: System.out.println("\nThank you for using the program. Goodbye!");
 				break;
@@ -37,7 +37,7 @@ public class A2CoreyHMenu {
 		}
 		
 		// method to display all book information in the list
-		private void displayGift() {
+		private void displayA2CoreyHGift() {
 			if (list.size() == 0)
 				System.out.println("\nThere are no gifts to display");
 			else {
@@ -49,7 +49,7 @@ public class A2CoreyHMenu {
 			}
 		}
 
-		private void changeGift() {
+		private void changeA2CoreyHGift() {
 
 			Scanner stdin = new Scanner(System.in);
 
@@ -62,7 +62,7 @@ public class A2CoreyHMenu {
 			System.out.println(); // empty line before book data
 			for (int i=0; i < size; i++) { // loop for all books in the list
 				A2CoreyHGift b = list.get(i); // get book instance from the list for each index value
-				if (b.isbn == isbn) {
+				if (b.A2CoreyHGift == A2CoreyHGift) {
 						list.remove(b); // remove the book
 						System.out.println("\nRemoved the following book: " + b.toString()); // print book data to console
 						return; // done so can return from method
@@ -73,39 +73,17 @@ public class A2CoreyHMenu {
 			System.out.println("\nThere is no book with this ISBN");
 		}
 		
-		private void orderGift() {
+		private void orderA2CoreyHGift() {
 				Scanner stdin = new Scanner(System.in);
 				// prompt user for all gift data to be set on creation
 				System.out.println("What kind of gift basket do you want to order?");
 				System.out.println("1: Fruit Basket");
 				System.out.println("2: Sweets Basket");
-				int typeBasket = stdin.nextInt();
-				if (typeBasket == 1) {
-					System.out.println("What size of gift basket do you want (S)mall, (M)edium, or (L)arge?:");
-				}
-				String size = stdin.next();
-				if (size == "S".toUpperCase()) {
-					price = 19.99;
-					numFruit = 6;
-				}
-				
-				if (size == "M".toUpperCase()) {
-					price = 29.99;
-					numFruit = 9;
-				}
-				
-				if (size == "L".toUpperCase()) {
-					price = 39.99;
-					numFruit = 15;
-				}
-				
+				// create Gift instance
+				A2CoreyHGift b = new A2CoreyHGift();
 				System.out.println("Do you want citrus fruits included? true/false :");
-				boolean citrusFruit = stdin.next();
-				if (citrusFruit == "true".toLowerCase()) {
-					price += 5.99;
-				}
-				
-				if (typBasket == 2) {
+				boolean citrusFruit = (stdin.next().toLowerCase()=="true");
+				if (typeBasket == 2) {
 					System.out.println("What size of gift basket do you want (S)mall, (M)edium, or (L)arge?:");
 				}
 				
@@ -121,8 +99,7 @@ public class A2CoreyHMenu {
 				System.out.print("What is the book's title? ");
 				String title = stdin.next();
 
-				// create Gift instance
-				A2CoreyHGift b = new A2CoreyHGift(isbn, price, title);
+				
 
 				// tell user what was created
 				System.out.println("\nThe following book was created: " + b.toString());
