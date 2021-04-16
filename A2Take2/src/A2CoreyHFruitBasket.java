@@ -15,17 +15,21 @@ public class A2CoreyHFruitBasket extends A2CoreyHGift {
 		case "s" : 
 			numFruit = 6;
 			price = 19.99;
+			break;
 		case "m" :
 			numFruit = 9;
 			price = 29.99;
+			break;
 		case "l" :
 			numFruit = 15;
 			price = 39.99;
+			break;
 		}
 						
 		if (citrusFruit) {
 			price += 5.99;
 		}
+	}
 	
 	
 	//get method
@@ -37,7 +41,6 @@ public class A2CoreyHFruitBasket extends A2CoreyHGift {
 		return citrusFruit;
 		}
 	
-	
 	//set method
 	public void setNumFruit(int numFruit) {
 		this.numFruit = numFruit;
@@ -46,38 +49,41 @@ public class A2CoreyHFruitBasket extends A2CoreyHGift {
 	public void setCitrusFruit(boolean citrusFruit) {
 		this.citrusFruit = citrusFruit;
 		}
-	// override parent's
-/*	@Override
-	public double calculateGiftPrice() {
-				
-			double smallPrice = 19.99; // basic fee
-			double mediumPrice = smallPrice += 10.00;
-			double largePrice = smallPrice += 20.00;
-			//int currYear = Calendar.getInstance().get(Calendar.YEAR);
-			
-			if(giftSize == "s" && !citrusFruit) {
-				return smallPrice; //19.99;
-			} else if(size == "s" && citrusFruit) {
-				return smallPrice += 5.99 ;  // add 5.99 to 19.99
-			} else if(size == "m" && !citrusFruit) {
-				return mediumPrice;  
-			} else if(size == "m" && citrusFruit) {
-				return mediumPrice += 5.99;  // add 5.99 to 29.99
-			} else if(size == "l" && !citrusFruit) {
-				return largePrice;  
-			} else if(size == "l" && citrusFruit) {
-				return largePrice += 5.99;  // add 5.99 to 29.99
-			}
-			
-				return price
-			}
-*/			
-	//@Override
-	//public String toString() {
-		//return "Fruit Basket [ numFruits= " + numFruits() + ", citrusFruit= " + citrusFruit() + ", basketID= " + basketID() + ", price= " 
-				//+ price + "]";
-		//}
+	
+	@Override
+	public String toString() {
+		return "Fruit Basket [ numFruits= " + numFruit + ", citrusFruit= " + citrusFruit + ", basketID= " + basketID + ", price= " + price + "]";
+		}
 
+	// override parent's
+	/*	@Override
+		public double calculateGiftPrice() {
+					
+				double smallPrice = 19.99; // basic fee
+				double mediumPrice = smallPrice += 10.00;
+				double largePrice = smallPrice += 20.00;
+				//int currYear = Calendar.getInstance().get(Calendar.YEAR);
+				
+				if(giftSize == "s" && !citrusFruit) {
+					return smallPrice; //19.99;
+				} else if(size == "s" && citrusFruit) {
+					return smallPrice += 5.99 ;  // add 5.99 to 19.99
+				} else if(size == "m" && !citrusFruit) {
+					return mediumPrice;  
+				} else if(size == "m" && citrusFruit) {
+					return mediumPrice += 5.99;  // add 5.99 to 29.99
+				} else if(size == "l" && !citrusFruit) {
+					return largePrice;  
+				} else if(size == "l" && citrusFruit) {
+					return largePrice += 5.99;  // add 5.99 to 29.99
+				}
+				
+					return price
+				}
+	*/			
+	
+	
+	
 	//private String numFruits() {
 		// TODO Auto-generated method stub
 		//return null;
