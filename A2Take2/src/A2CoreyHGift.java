@@ -1,42 +1,65 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.UUID;
 
-
-public abstract class A2CoreyHGift {
+public class A2CoreyHGift {
 	
-	private String basketID;				//this is the id...some how???
-	private String size;      		//S = 19.99, M = 29.99, L = 39.99
+	private int basketID;				//this is the id...some how???
+	private String giftSize;      		//S = 19.99, M = 29.99, L = 39.99
 	private double price; 
 	
 	//constructor
-	public A2CoreyHGift(String basketID,  String size, double price) {
+	public A2CoreyHGift(int basketID,  String size, double price) {
 		this.basketID = basketID;
-		this.size = size;
+		this.giftSize = giftSize;
 		this.price = price;
 		
 	}
 	//get methods
-	public String getBasketID() {
+	public int getBasketID() {
 		return basketID;
 		}
-	
-	public String getSize() { 
-		return size;
+	public String getGiftSize() { 
+		return giftSize;
 		}
 	public double getPrice() { 
 		return price;
 		}
 	
 	//set method
-	public void setBasketID(String basketID) {
+	public void setBasketID(int basketID) {
 		this.basketID = basketID;
 		}
 	public void setSize(String size) {
-		this.size = size;
+		this.giftSize = giftSize;
 		}
 	public void setPrice(double price) {
 		this.price = price;
 		}
+	
+	
+	    public static int basketID() {      
+	        UUID idOne = UUID.randomUUID();
+	        String str=""+idOne;        
+	        int uid=str.hashCode();
+	        String filterStr=""+uid;
+	        str=filterStr.replaceAll("-", "");
+	        return Integer.parseInt(str);
+	    }
+
+	    // XXX: replace with java.util.UUID
+
+	    public static void main(String[] args) {
+	        for (int i = 0; i < 5; i++) {
+	            System.out.println(basketID());
+	            //generateUniqueId();
+	        }
+	    }
+
+	}
+	
+	
+	
 	
 	
 	//calculate basket fee
@@ -44,6 +67,6 @@ public abstract class A2CoreyHGift {
 	//	return 19.99;
 			
 	//	}
-	}
+	//}
 
 

@@ -6,18 +6,20 @@ public class A2CoreyHFruitBasket extends A2CoreyHGift {
 	private boolean citrusFruit;  	//True = additional $5.99
 	
 	// constructor
-	public A2CoreyHFruitBasket(String basket, int numFruit, boolean citrusFruit, String size ) {
-		super(basket, size);
-		if (this.size == small) {
+	public A2CoreyHFruitBasket(int basketID, String giftSize, boolean citrusFruit, double price) {
+		super(basketID, giftSize, price);
+		
+		
+		if (this.giftSize == "s") {
 			numFruit = 6;
-		} else if (this.size == medium ) {
+		} else if (this.giftSize == "m" ) {
 			numFruit = 9;
-		} else {
+		} else if (this.giftSize == "l" ) {
 			numFruit = 15;
 		}
 		
 		
-		if (citrusfruit)
+		if (citrusFruit)
 			price += 5.99;
 		
 	}
@@ -68,9 +70,14 @@ public class A2CoreyHFruitBasket extends A2CoreyHGift {
 			
 	@Override
 	public String toString() {
-		return "Fruit Basket [ basketID=" + getId() + ", title=" + getTitle() + ", year=" + getYear() + ", chapters=" 
-				+ numChapters+ "]";
+		return "Fruit Basket [ numFruits= " + numFruits() + ", citrusFruit= " + citrusFruit() + ", basketID= " + basketID() + ", price= " 
+				+ price + "]";
 		}
+
+	private String numFruits() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	}
 	
 	

@@ -90,51 +90,38 @@ public class A2CoreyHMenu {
 			    }
 			}
 				
-		private void orderA2CoreyHFruit() {
+		private  A2CoreyHFruitBasket orderA2CoreyHFruit() {
 				// create Gift instance
-				A2CoreyHGift b = new A2CoreyHGift();
+				Scanner stdin = new Scanner(System.in);
 				System.out.println("Do you want citrus fruits included? true/false :");
 				boolean citrusFruit = (stdin.next().toLowerCase()=="true");
-				if (typeBasket == 1) {
-					System.out.println("What size of gift basket do you want (S)mall, (M)edium, or (L)arge?:");
+				System.out.println("What size of gift basket do you want (S)mall, (M)edium, or (L)arge?:");
+				String size = stdin.next();
+				A2CoreyHFruitBasket b = new A2CoreyHFruitBasket(basketID, size, citrusFruit);
+				return b;
 				}
 				
-				
-				for(int i = 0; i < list.size(); i++) {
-					if (list.get(i).isbn == isbn) {
-						System.out.print("This ISBN is already used! ");
-						return;
-					}
-				}
-				System.out.print("What is the price of this book? ");
-				double price = stdin.nextDouble();
-				System.out.print("What is the book's title? ");
-				String title = stdin.next();
-
-				
-
-				// tell user what was created
-				System.out.println("\nThe following book was created: " + b.toString());
-
-				// add book instance to list
-				list.add(b);
-				
-		}
+		private  A2CoreyHSweetsBasket orderA2CoreyHSweets() {
+			// create Gift instance
+			Scanner stdin = new Scanner(System.in);
+			System.out.println("Do you want this to include nuts? true/false :");
+			boolean includesNuts = (stdin.next().toLowerCase()=="true");
+			System.out.println("What size of gift basket do you want (S)mall, (M)edium, or (L)arge?:");
+			String size = stdin.next();
+			A2CoreyHSweetsBasket b = new A2CoreyHSweetsBasket(basketID, size, includesNuts);
+			return b;
+			}
 		
 		public static void main(String[] args) {
-
 				A2CoreyHMenu control = new A2CoreyHMenu(); // new instance of class
-				
 				Scanner stdin = new Scanner(System.in);
 				int selection = 0;
 
 				do {
 
 						control.displayMenu();
-						
 						System.out.print("\nEnter your selection : ");
 						selection = stdin.nextInt();
-
 						control.processChoice(selection);
 				
 				} 
