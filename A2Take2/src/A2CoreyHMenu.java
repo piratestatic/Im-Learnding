@@ -62,9 +62,9 @@ public class A2CoreyHMenu {
 				int i = stdin.nextInt();
 				switch (i) {
 
-			      case 1 : orderA2CoreyHFruit();         
+			      case 1 : list.append(orderA2CoreyHFruits());         
 			        break;
-			      case 2 : orderA2CoreyHSweets();         
+			      case 2 : list.append(orderA2CoreyHSweets());         
 			        break;
 			          default: System.out.println("Invalid choice");
 			    }
