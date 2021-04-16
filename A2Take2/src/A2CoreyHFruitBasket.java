@@ -6,8 +6,8 @@ public class A2CoreyHFruitBasket extends A2CoreyHGift {
 	private boolean citrusFruit;  	//True = additional $5.99
 	
 	// constructor
-	public A2CoreyHFruitBasket(int basketID, String giftSize, boolean citrusFruit, double price) {
-		super(basketID, giftSize, price);
+	public A2CoreyHFruitBasket(int basketID, String giftSize, boolean citrusFruit) {
+		super(basketID, giftSize);
 		
 		
 		if (getGiftSize() == "s") {
@@ -51,17 +51,17 @@ public class A2CoreyHFruitBasket extends A2CoreyHGift {
 			double largePrice = smallPrice += 20.00;
 			//int currYear = Calendar.getInstance().get(Calendar.YEAR);
 			
-			if(size == small && !citrusFruit) {
+			if(giftSize == "s" && !citrusFruit) {
 				return smallPrice; //19.99;
-			} else if(size == small && citrusFruit) {
+			} else if(size == "s" && citrusFruit) {
 				return smallPrice += 5.99 ;  // add 5.99 to 19.99
-			} else if(size == medium && !citrusFruit) {
+			} else if(size == "m" && !citrusFruit) {
 				return mediumPrice;  
-			} else if(size == medium && citrusFruit) {
+			} else if(size == "m" && citrusFruit) {
 				return mediumPrice += 5.99;  // add 5.99 to 29.99
-			} else if(size == large && !citrusFruit) {
+			} else if(size == "l" && !citrusFruit) {
 				return largePrice;  
-			} else if(size == large && citrusFruit) {
+			} else if(size == "l" && citrusFruit) {
 				return largePrice += 5.99;  // add 5.99 to 29.99
 			}
 			

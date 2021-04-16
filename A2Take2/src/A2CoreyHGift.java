@@ -9,7 +9,7 @@ public class A2CoreyHGift {
 	private double price; 
 	
 	//constructor
-	public A2CoreyHGift(int basketID,  String size, double price) {
+	public A2CoreyHGift(int basketID,  String giftSize) {
 		this.basketID = basketID;
 		this.giftSize = giftSize;
 		this.price = price;
@@ -30,7 +30,7 @@ public class A2CoreyHGift {
 	public void setBasketID(int basketID) {
 		this.basketID = basketID;
 		}
-	public void setSize(String size) {
+	public void setGiftSize(String giftSize) {
 		this.giftSize = giftSize;
 		}
 	public void setPrice(double price) {

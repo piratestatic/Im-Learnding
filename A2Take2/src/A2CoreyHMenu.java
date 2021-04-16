@@ -70,16 +70,17 @@ public class A2CoreyHMenu {
 			    }
 			}
 				
-		private  A2CoreyHFruitBasket orderA2CoreyHFruit() {
-				// create Gift instance
-				Scanner stdin = new Scanner(System.in);
-				System.out.println("Do you want citrus fruits included? true/false :");
-				boolean citrusFruit = (stdin.next().toLowerCase()=="true");
-				System.out.println("What size of gift basket do you want (S)mall, (M)edium, or (L)arge?:");
-				String size = stdin.next();
-				A2CoreyHFruitBasket b = new A2CoreyHFruitBasket(basketID, size, citrusFruit);
-				return b;
-				}
+		private A2CoreyHFruitBasket orderA2CoreyHFruit() {
+			// create Gift instance
+			Scanner stdin = new Scanner(System.in);
+			System.out.println("Do you want citrus fruits included? true/false :");
+			boolean citrusFruit = (stdin.next().toLowerCase()=="true");
+			System.out.println("What size of gift basket do you want (S)mall, (M)edium, or (L)arge?:");
+			String size = stdin.next();
+			int basketID = (A2CoreyHGift.basketID());
+			A2CoreyHFruitBasket b = new A2CoreyHFruitBasket(basketID, size, citrusFruit);
+			return b;
+			}
 				
 		private  A2CoreyHSweetsBasket orderA2CoreyHSweets() {
 			// create Gift instance
@@ -88,6 +89,7 @@ public class A2CoreyHMenu {
 			boolean includesNuts = (stdin.next().toLowerCase()=="true");
 			System.out.println("What size of gift basket do you want (S)mall, (M)edium, or (L)arge?:");
 			String size = stdin.next();
+			int basketID = (A2CoreyHGift.basketID());
 			A2CoreyHSweetsBasket b = new A2CoreyHSweetsBasket(basketID, size, includesNuts);
 			return b;
 			}
