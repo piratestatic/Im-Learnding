@@ -4,25 +4,29 @@ public class A2CoreyHFruitBasket extends A2CoreyHGift {
 	//local attributes
 	private int numFruit;         	//S = 6, M = 9, L = 15 
 	private boolean citrusFruit;  	//True = additional $5.99
+	public double price;
 	
 	// constructor
 	public A2CoreyHFruitBasket(int basketID, String giftSize, boolean citrusFruit) {
 		super(basketID, giftSize);
 		
+		switch(giftSize) {
 		
-		if (giftSize == "s") {
+		case "s" : 
 			numFruit = 6;
-		} else if (giftSize == "m" ) {
+			price = 19.99;
+		case "m" :
 			numFruit = 9;
-		} else if (giftSize == "l" ) {
+			price = 29.99;
+		case "l" :
 			numFruit = 15;
+			price = 39.99;
 		}
-		
-		
-		//if (citrusFruit)
-			//price += 5.99;
-		
-	}
+						
+		if (citrusFruit) {
+			price += 5.99;
+		}
+	
 	
 	//get method
 	public int getNumFruit() {
