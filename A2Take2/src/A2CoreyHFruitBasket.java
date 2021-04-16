@@ -10,17 +10,17 @@ public class A2CoreyHFruitBasket extends A2CoreyHGift {
 		super(basketID, giftSize);
 		
 		
-		if (getGiftSize() == "s") {
+		if (giftSize == "s") {
 			numFruit = 6;
-		} else if (getGiftSize() == "m" ) {
+		} else if (giftSize == "m" ) {
 			numFruit = 9;
-		} else if (getGiftSize() == "l" ) {
+		} else if (giftSize == "l" ) {
 			numFruit = 15;
 		}
 		
 		
-		if (citrusFruit)
-			price += 5.99;
+		//if (citrusFruit)
+			//price += 5.99;
 		
 	}
 	
@@ -43,7 +43,7 @@ public class A2CoreyHFruitBasket extends A2CoreyHGift {
 		this.citrusFruit = citrusFruit;
 		}
 	// override parent's
-	@Override
+/*	@Override
 	public double calculateGiftPrice() {
 				
 			double smallPrice = 19.99; // basic fee
@@ -67,37 +67,21 @@ public class A2CoreyHFruitBasket extends A2CoreyHGift {
 			
 				return price
 			}
-			
-	@Override
-	public String toString() {
-		return "Fruit Basket [ numFruits= " + numFruits() + ", citrusFruit= " + citrusFruit() + ", basketID= " + basketID() + ", price= " 
-				+ price + "]";
-		}
+*/			
+	//@Override
+	//public String toString() {
+		//return "Fruit Basket [ numFruits= " + numFruits() + ", citrusFruit= " + citrusFruit() + ", basketID= " + basketID() + ", price= " 
+				//+ price + "]";
+		//}
 
-	private String numFruits() {
+	//private String numFruits() {
 		// TODO Auto-generated method stub
-		return null;
+		//return null;
 	}
-	}
+//}
 	
 	
-}
 
 
 
-/*
 
-	// override parent's
-	@Override
-	public double calculateRentalFee() {
-		double fee = numChapters * 0.10;  // basic fee
-		int currYear = Calendar.getInstance().get(Calendar.YEAR);
-		
-		if(this.getYear() == currYear)
-			fee += 1;  // add $1.00 fee
-		
-		return fee;
-	}
-	
-	
-*/

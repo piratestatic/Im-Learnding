@@ -5,14 +5,14 @@ import java.util.UUID;
 public class A2CoreyHGift {
 	
 	private int basketID;				//this is the id...some how???
-	private String giftSize;      		//S = 19.99, M = 29.99, L = 39.99
-	private double price; 
+	private String giftSize;      		
+	private double price; 				//S = 19.99, M = 29.99, L = 39.99
 	
 	//constructor
 	public A2CoreyHGift(int basketID,  String giftSize) {
 		this.basketID = basketID;
 		this.giftSize = giftSize;
-		this.price = price;
+		//this.price = price;
 		
 	}
 	//get methods
@@ -22,9 +22,9 @@ public class A2CoreyHGift {
 	public String getGiftSize() { 
 		return giftSize;
 		}
-	public double getPrice() { 
-		return price;
-		}
+	//public double getPrice() { 
+		//return price;
+		//}
 	
 	//set method
 	public void setBasketID(int basketID) {
@@ -33,9 +33,9 @@ public class A2CoreyHGift {
 	public void setGiftSize(String giftSize) {
 		this.giftSize = giftSize;
 		}
-	public void setPrice(double price) {
-		this.price = price;
-		}
+	//public void setPrice(double price) {
+		//this.price = price;
+		//}
 	
 	
 	    public static int basketID() {      
