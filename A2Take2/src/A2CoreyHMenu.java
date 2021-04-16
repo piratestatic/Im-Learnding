@@ -26,8 +26,8 @@ public class A2CoreyHMenu {
 
 			case 1 : orderA2CoreyHGift(); 		
 				break;
-			case 2 : changeA2CoreyHGift(); 		
-				break;
+			//case 2 : changeA2CoreyHGift(); 		
+				//break;
 			case 5 : displayA2CoreyHGift(); 	
 				break;
 			case 9: System.out.println("\nThank you for using the program. Goodbye!");
@@ -49,29 +49,9 @@ public class A2CoreyHMenu {
 			}
 		}
 
-		private void changeA2CoreyHGift() {
+		//private void changeA2CoreyHGift() {
 
-			Scanner stdin = new Scanner(System.in);
-
-			// prompt user for data to find the book to remove
-			System.out.print("What is the ISBN of the book you want to remove? ");
-			int isbn = stdin.nextInt();
 			
-			// look for the book that matches above
-			int size = list.size(); // number of books in the list
-			System.out.println(); // empty line before book data
-			for (int i=0; i < size; i++) { // loop for all books in the list
-				A2CoreyHGift b = list.get(i); // get book instance from the list for each index value
-				if (b.A2CoreyHGift == A2CoreyHGift) {
-						list.remove(b); // remove the book
-						System.out.println("\nRemoved the following book: " + b.toString()); // print book data to console
-						return; // done so can return from method
-				}
-			
-			}
-			// if did not return from for-loop that mean sit did not find the book
-			System.out.println("\nThere is no book with this ISBN");
-		}
 		
 		private void orderA2CoreyHGift() {
 				Scanner stdin = new Scanner(System.in);

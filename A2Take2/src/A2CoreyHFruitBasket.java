@@ -10,11 +10,11 @@ public class A2CoreyHFruitBasket extends A2CoreyHGift {
 		super(basketID, giftSize, price);
 		
 		
-		if (this.giftSize == "s") {
+		if (getGiftSize() == "s") {
 			numFruit = 6;
-		} else if (this.giftSize == "m" ) {
+		} else if (getGiftSize() == "m" ) {
 			numFruit = 9;
-		} else if (this.giftSize == "l" ) {
+		} else if (getGiftSize() == "l" ) {
 			numFruit = 15;
 		}
 		
