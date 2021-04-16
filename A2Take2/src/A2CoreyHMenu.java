@@ -62,9 +62,9 @@ public class A2CoreyHMenu {
 				int i = stdin.nextInt();
 				switch (i) {
 
-			      case 1 : list.append(orderA2CoreyHFruits());         
+			      case 1 : list.add(orderA2CoreyHFruit());         
 			        break;
-			      case 2 : list.append(orderA2CoreyHSweets());         
+			      case 2 : list.add(orderA2CoreyHSweets());         
 			        break;
 			          default: System.out.println("Invalid choice");
 			    }
@@ -86,11 +86,11 @@ public class A2CoreyHMenu {
 			// create Gift instance
 			Scanner stdin = new Scanner(System.in);
 			System.out.println("Do you want this to include nuts? true/false :");
-			boolean includesNuts = (stdin.next().toLowerCase()=="true");
+			boolean hasNuts = (stdin.next().toLowerCase()=="true");
 			System.out.println("What size of gift basket do you want (S)mall, (M)edium, or (L)arge?:");
 			String size = stdin.next();
 			int basketID = (A2CoreyHGift.basketID());
-			A2CoreyHSweetsBasket b = new A2CoreyHSweetsBasket(basketID, size, includesNuts);
+			A2CoreyHSweetsBasket b = new A2CoreyHSweetsBasket(basketID, size, hasNuts);
 			return b;
 			}
 		
