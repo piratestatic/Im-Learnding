@@ -26,8 +26,15 @@ public class A2CoreyHMenu {
 
 			case 1 : orderA2CoreyHGift(); 		
 				break;
-			//case 2 : changeA2CoreyHGift(); 		
-				//break;
+			case 2 : if (list.contains(orderA2CoreyHFruit()))
+						{
+						changeA2CoreyHFruit();
+						}
+						else 
+						{
+						orderA2CoreyHSweets();
+						}				
+				break;
 			case 5 : displayA2CoreyHGift(); 	
 				break;
 			case 9: System.out.println("\nThank you for using the program. Goodbye!");
@@ -41,17 +48,33 @@ public class A2CoreyHMenu {
 			if (list.size() == 0)
 				System.out.println("\nThere are no gifts to display");
 			else {
-				System.out.println(); 												// empty line before book data
-				for (int i=0; i < list.size(); i++) { 								// loop for all books in the list
-					A2CoreyHGift b = list.get(i); 											// get book instance from the list 
-					System.out.println(b.toString()); 								// print book data to console
+				System.out.println(); 												
+				for (int i=0; i < list.size(); i++) { 								
+					A2CoreyHGift b = list.get(i); 											 
+					System.out.println(b.toString()); 								
 				}
 			}
 		}
 
-		//private void changeA2CoreyHGift() {
-
-			
+		private void changeA2CoreyHFruit() {
+			Scanner stdin = new Scanner(System.in);
+			System.out.println("Current gift size is: " + orderA2CoreyHFruit().getGiftSize() + " What size do you want? S, M, or L:");
+			String newSize = stdin.next().toLowerCase();
+			orderA2CoreyHFruit().setGiftSize(newSize);
+			System.out.println("Current basket citrus=" + orderA2CoreyHFruit().getCitrusFruit() + "Do you want citrus fruits included? true/false:");
+			boolean citrusFruit = (stringPars(stdin.next().toLowerCase()));
+			orderA2CoreyHFruit().setCitrusFruit(citrusFruit);
+		}
+		
+		private void changeA2CoreyHSweets() {
+			Scanner stdin = new Scanner(System.in);
+			System.out.println("Current gift size is: " + orderA2CoreyHSweets().getGiftSize() + " What size do you want? S, M, or L:");
+			String newSize = stdin.next().toLowerCase();
+			orderA2CoreyHSweets().setGiftSize(newSize);
+			System.out.println("Current basket citrus=" + orderA2CoreyHSweets().getHasNuts() + "Do you want citrus fruits included? true/false:");
+			boolean hasNuts = (stringPars(stdin.next().toLowerCase()));
+			orderA2CoreyHSweets().setHasNuts(hasNuts);
+		}
 		
 		private void orderA2CoreyHGift() {
 				Scanner stdin = new Scanner(System.in);
@@ -69,16 +92,27 @@ public class A2CoreyHMenu {
 			          default: System.out.println("Invalid choice");
 			    }
 			}
-				
+		
+		private boolean stringPars(String hasItem) {
+				if (hasItem == "true");
+				{
+				return true;
+				}
+		}
+		
+	
+			
+			
 		private A2CoreyHFruitBasket orderA2CoreyHFruit() {
 			// create Gift instance
 			Scanner stdin = new Scanner(System.in);
 			System.out.println("Do you want citrus fruits included? true/false :");
-			boolean citrusFruit = (stdin.next().toLowerCase()=="true");
+			boolean citrusFruit = (stringPars(stdin.next().toLowerCase()));
 			System.out.println("What size of gift basket do you want (S)mall, (M)edium, or (L)arge?:");
-			String size = stdin.next();
+			String giftSize = stdin.next().toLowerCase();
 			int basketID = (A2CoreyHGift.basketID());
-			A2CoreyHFruitBasket b = new A2CoreyHFruitBasket(basketID, size, citrusFruit);
+			A2CoreyHFruitBasket b = new A2CoreyHFruitBasket(basketID, giftSize, citrusFruit);
+			System.out.println(b.toString());
 			return b;
 			}
 				
@@ -86,11 +120,12 @@ public class A2CoreyHMenu {
 			// create Gift instance
 			Scanner stdin = new Scanner(System.in);
 			System.out.println("Do you want this to include nuts? true/false :");
-			boolean hasNuts = (stdin.next().toLowerCase()=="true");
+			boolean hasNuts = (stringPars(stdin.next().toLowerCase()));
 			System.out.println("What size of gift basket do you want (S)mall, (M)edium, or (L)arge?:");
-			String size = stdin.next();
+			String giftSize = stdin.next().toLowerCase();
 			int basketID = (A2CoreyHGift.basketID());
-			A2CoreyHSweetsBasket b = new A2CoreyHSweetsBasket(basketID, size, hasNuts);
+			A2CoreyHSweetsBasket b = new A2CoreyHSweetsBasket(basketID, giftSize, hasNuts);
+			System.out.println(b.toString());
 			return b;
 			}
 		

@@ -52,8 +52,8 @@ public class A2CoreyHFruitBasket extends A2CoreyHGift {
 	
 	@Override
 	public String toString() {
-		return ("Fruit Basket [ numFruits= " + numFruit + ", citrusFruit= " + citrusFruit + ", basketID= " + basketID() + ", price= " + price + "]");
-		}
+		return "Fruit Basket [ numFruits= " + numFruit + ", citrusFruit= " + citrusFruit + ", basketID= " + basketID() + ", price= " + price + ", Size of gift: " + giftSize + "]"; 
+	}
 }
 	
 	

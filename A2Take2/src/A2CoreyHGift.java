@@ -4,8 +4,8 @@ import java.util.UUID;
 
 public class A2CoreyHGift {
 	
-	private int basketID;				
-	private String giftSize;      				
+	public int basketID;				
+	public String giftSize;      				
 	
 	//constructor
 	public A2CoreyHGift(int basketID,  String giftSize) {
@@ -39,26 +39,4 @@ public class A2CoreyHGift {
 	        return Integer.parseInt(str);
 	    }
 
-	   
-
-	    public static void main(String[] args) {
-	        for (int i = 0; i < 5; i++) {
-	            System.out.println(basketID());
-	            basketID();
-	        }
-	    }
-
 	}
-	
-	
-	
-	
-	
-	//calculate basket fee
-	//public double calculateGiftPrice() {//smallest basket is 19.99
-	//	return 19.99;
-			
-	//	}
-	//}
-
-

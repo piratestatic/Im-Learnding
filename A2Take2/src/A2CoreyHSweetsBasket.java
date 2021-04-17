@@ -21,6 +21,7 @@ public class A2CoreyHSweetsBasket extends A2CoreyHGift {
 		}
 						
 	}
+	
 	//get method
 	public boolean getHasNuts() {
 		return hasNuts;
@@ -30,9 +31,8 @@ public class A2CoreyHSweetsBasket extends A2CoreyHGift {
 		this.hasNuts = hasNuts;
 		}
 		
-			
 	@Override
 	public String toString() {
 		return "Sweets Basket [ hasNuts= " + hasNuts + ", basketID= " + basketID() + ", price= " + price + "]";
-		}
+		 }
 	}
