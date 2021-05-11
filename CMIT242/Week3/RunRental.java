@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class RunRental {
 	
-	public Media object;
+	private Media object;
 
-	//public RunRental() {
-		//object = new Media();
-	//}
+	public RunRental() {
+		object = new Media();
+	}
 	
 	public void displayMenu() {
 		System.out.println("\n Welcome to Media Rental System");

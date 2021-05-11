@@ -16,6 +16,7 @@ public abstract class Media {
             this.id = id;
             this.title = title;
             this.year = year;
+            this.object = object;
             }
 
    /*   
