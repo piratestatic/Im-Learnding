@@ -7,7 +7,7 @@ public class MusicCD extends Media {
       // constructor
       public MusicCD(int id, String title, int year, int length) {
             super(id, title, year);
-            this.length = length;
+            this.length = length; //Snake?
       }
 
       // get method

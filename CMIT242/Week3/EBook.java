@@ -8,7 +8,7 @@ public class EBook extends Media {
       // constructor
       public EBook(int id, String title, int year, int chapters) {
             super(id, title, year);
-            numChapters = chapters;
+            this.numChapters = chapters;
       }
 
       // get method
