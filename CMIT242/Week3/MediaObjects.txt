@@ -1,0 +1,3 @@
+EBook [ id=123, title=Forever Young, year=2018, chapters=25]
+MovieDVD [ id=125, title=After Tomorrow, year=2020, size=120.0MB]
+MusicCD [id=124, title=Beyond Today, year=2020, length=120min]
